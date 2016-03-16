@@ -1,0 +1,14 @@
+<form ation="{#:U('Setting/setBase')#}" method="post">
+<table>
+<volist name="setting" id="vo">
+<tr>
+<td>
+{#$vo.title#}<input type="text" name="{#$vo.name#}" value="{#$vo.value#}">
+</td>
+</tr>
+</volist>
+<tr>
+<td><button type="submit">保存</button></td>
+</tr>
+</table>
+</form>

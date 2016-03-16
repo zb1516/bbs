@@ -1,0 +1,32 @@
+<form id="form" action="{#:U('Article/add')#}" method="post">
+<input type="hidden" name="member_id" value="{#$Think.session.member_info.member_id#}">
+<table>
+<tr>
+<td>标题:</td><td><input type="text" name="topic_title"></td>
+</tr>
+<tr>
+<td>内容:</td><td><script id="editor" type="text/plain" name="topic_content"></script></td>
+</tr>
+<tr>
+<td>模块:</td>
+<td>
+<select name="section_id">
+<option value="1">模块一</option>
+<option value="2">模块二</option>
+<option value="3">模块三</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+<button type="submit" id="submit">发表</button>
+</td>
+</tr>
+</table>
+</form>
+<script>
+var ue=UE.getEditor('editor',{
+	    initialFrameHeight:400,
+	    initialFrameWidth:800
+});
+</script>

@@ -1,0 +1,17 @@
+{#$topic.topic_title#}
+评论数{#$topic.topic_comment#}
+浏览量{#$topic.topic_click#}
+{#$topic.topic_content|htmlspecialchars_decode#}
+
+
+<volist name="comment" id="vo">
+{#$vo.member_name#}{#$vo.comment_add_time|date='m-d H:i:s',####}
+{#$vo.comment_content#}
+</volist>
+
+<form action="{#:U('Comment/add')#}" method="post">
+<input type="hidden" name="topic_id" value="{#$topic.topic_id#}">
+<input type="hidden" name="member_id" value="{#$Think.session.member_info.member_id#}">
+评论内容<textarea rows="5" cols="20" name="comment_content"></textarea>
+<button type="submit">发表主题</button>
+</form>

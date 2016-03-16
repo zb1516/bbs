@@ -1,0 +1,46 @@
+<form action="{#:U('Member/edit')#}" method="post">
+<input type="hidden" name="member_id" value="{#$Think.session.member_info.member_id#}">
+<table>
+<tr>
+<td>用户名:</td>
+<td>{#$Think.session.member_info.member_username#}</td>
+</tr>
+<tr>
+<td>真实姓名:</td>
+<td><input type="text" name="member_name" value="{#$Think.session.member_info.member_name#}"></td>
+</tr>
+<tr>
+<td>手机:</td>
+<td><input type="text" name="member_mobile" value="{#$Think.session.member_info.member_mobile#}"></td>
+</tr>
+<tr>
+<td>地址:</td>
+<td>
+<select>
+<option>省</option>
+</select>
+<select>
+<option>市</option>
+</select>
+<select>
+<option>县</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>QQ:</td>
+<td><input type="text" name="member_qq" value="{#$Think.session.member_info.member_qq#}"></td>
+</tr>
+<tr>
+<td>邮箱:</td>
+<td><input type="text" name="member_email" value="{#$Think.session.member_info.member_email#}"></td>
+</tr>
+<tr>
+<td>性别:</td>
+<td><input type="text" value="<if condition='$Think.session.member_info.member_sex eq 0'>保密<elseif condition='$Think.session.member_info.member_sex eq 1' />男</else>女</if>"></td>
+</tr>
+<tr>
+<td><button>保存</button></td>
+</tr>
+</table>
+</form>

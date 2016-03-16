@@ -1,0 +1,28 @@
+<img src="{#$Think.session.member_info.member_images#}">{#$Think.session.member_info.member_username#}
+<a href="{#:U('Member/logout')#}">{#$Think.lang.out#}</a>
+<a href="{#:U('Member/edit')#}">{#$Think.lang.member_setting#}</a>
+<a href="{#:U('Member/upload')#}">{#$Think.lang.member_upload#}</a>
+<a href="{#:U('Topic/add')#}">{#$Think.lang.topic_add#}</a>
+<div>
+
+<a href="{#:U('Notice/index')#}">更多</a>
+<volist name="noticeNew" id="vo">
+<a href="{#:U('Notice/detail',array('notice_id'=>$vo['notice_id']))#}">{#$vo.notice_title#}</a>
+{#$vo.notice_add_time|date="Y-m-d H:i:s",####}
+</volist>
+
+<table>
+<volist name="topic" id="vo">
+<tr>
+<td>
+<img src="{#$vo.member_images#}">
+<a href="{#:U('Topic/detail',array('topic_id'=>$vo['topic_id']))#}">{#$vo.topic_title#}</a>
+{#$vo.topic_add_time#}
+{#$vo.topic_click#}
+{#$vo.topic_comment#}
+</td>
+</tr>
+</volist>
+</table>
+{#$page#}
+</div>
